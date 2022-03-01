@@ -9,6 +9,7 @@ public class PhysicMovin : MonoBehaviour
     private Vector3 acceleration;
     private Vector3 velocity;
     private Vector3 force;
+    private float gravity = -9.8f;
     public float mass;
 
     [SerializeField]
@@ -18,7 +19,7 @@ public class PhysicMovin : MonoBehaviour
     private void Update()
     {
         acceleration = Vector3.zero;
-        ApplyForce(new Vector3(10, -98, 0));
+        ApplyForce(new Vector3(10, mass*gravity, 0));
         Move();
         CheckLimits();
         
